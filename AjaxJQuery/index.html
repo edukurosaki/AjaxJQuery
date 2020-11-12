@@ -1,21 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style/node_modules/bootstrap/dist/css/estilo.css">
     <title>My Page</title>
 </head>
-<body>
-    <input id="cep">
 
-    <button type="button" onclick="consultaCEP()">Consultar CEP</button>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand">Consultar CEP</a>
+        <div class="form-inline">
+            <input id="cep" class="form-control mr-sm-2" type="search" placeholder="CEP" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" onclick="consultaCEP()">Buscar</button>
+        </div>
+    </nav>
+
+    <div  class="container status">
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" valuemin="0%" valuemax="100%"
+             style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+    </div>
     
-    <p id="cp"></p>
-    <p id="logradouro"></p>
-    <p id="bairro"></p>
-    <p id="localidade"></p>
-    <p id="uf"></p>
+    <div class="cep" id="row">
+        <div class="row">
+            <h3 id="result">Dados referente ao CEP</h3>
+        </div>
+
+        <div class="row">
+            <table class="table table-striped">
+                <tbody>
+                    <tr id="tr">
+                        <th scope="row">1</th>
+                        <td>CEP consultado</td>
+                        <td id="titulo-cep"></td>
+                        
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Logradouro</td>
+                        <td id="logradouro"></td>
+                        
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Bairro</td>
+                        <td id="bairro"></td>
+                       
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>Cidade</td>
+                        <td id="cidade"></td>
+                       
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>Estadoo (UF)</td>
+                        <td id="uf"></td>
+                       
+                    </tr>
+                    <tr>
+                        <th scope="row">6</th>
+                        <td>Informação Complementar</td>
+                        <td id="complemento"></td>
+                       
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+
 </body>
-<script  src="./script/main.js"></script>
-<script  src="./script/node_modules/jquery/dist/jquery.min.js"></script>
+<script src="./script/node_modules/jquery/dist/jquery.min.js"></script>
+<script src="./script/node_modules/jquery/dist/jquery.js"></script>
+<script src="./script/main.js"></script>
+
+
 </html>
